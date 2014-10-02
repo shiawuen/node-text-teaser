@@ -15,7 +15,7 @@ Send request to the API
 ```js
 var key = process.env.TEXTTEASER_KEY
 var subdomain = process.env.TEXTTEASER_DOMAIN || ''
-var tt = require('text-teaser)(key, subdomain)
+var tt = require('text-teaser')(key, subdomain)
 
 var data = {
   title: 'TITLE...............',
@@ -35,7 +35,7 @@ Get the summarized content from the API
 ```js
 var key = process.env.TEXTTEASER_KEY
 var subdomain = process.env.TEXTTEASER_DOMAIN || ''
-var tt = require('text-teaser)(key, subdomain)
+var tt = require('text-teaser')(key, subdomain)
 var id = 123 // for example
 
 tt.get(id, { count: 3 }, function(err, data){
