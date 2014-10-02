@@ -6,6 +6,10 @@
   "scripts": {
     "test": "mocha -t 2000 -R spec"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shiawuen/node-text-teaser.git"
+  },
   "license": "MIT",
   "dependencies": {
     "debug": "*",
