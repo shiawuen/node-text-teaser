@@ -1,6 +1,6 @@
 {
   "name": "text-teaser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Wrapper for TextTeaser",
   "main": "index.js",
   "scripts": {

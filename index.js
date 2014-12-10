@@ -27,6 +27,8 @@ TextTeaser.prototype.post = function(data, next){
     .send(data)
     .end(function(err, res){
       if (err) return next(err)
+      if (res.status >= 500)
+        return next(new Error(res.status + ':' + res.text))
       debug('post response body', res.body)
       next(null, res.body.id)
     })
@@ -46,6 +48,8 @@ TextTeaser.prototype.get = function get(id, opts, next){
     .query(opts)
     .end(function(err, res){
       if (err) return next(err)
+      if (res.status >= 500)
+        return next(new Error(res.status + ':' + res.text))
 
       res.body = res.body || {}
 
