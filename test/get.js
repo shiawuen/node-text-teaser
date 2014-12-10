@@ -4,9 +4,10 @@ var assert = require('assert')
 var data = require('./fixture')
 
 var user = process.env.TEXTTEASER_KEY
+var subdomain = process.env.TEXTTEASER_SUBDOMAIN
 if (!user) throw new Error('missing TextTeaser key')
 
-var tt = TextTeaser(user)
+var tt = TextTeaser(user, subdomain)
 
 describe('#get', function(){
   var id

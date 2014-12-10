@@ -46,8 +46,14 @@ TextTeaser.prototype.get = function get(id, opts, next){
     .query(opts)
     .end(function(err, res){
       if (err) return next(err)
-      if (Object.keys(res.body).length)
-        return next(null, res.body)
+
+      res.body = res.body || {}
+
+      var hasContent = true
+      hasContent &= !!Object.keys(res.body).length
+      hasContent &= res.body.status && 'pending' != res.body.status.toLowerCase()
+
+      if (hasContent) return next(null, res.body)
 
       // summarization not ready yet
       var getAgain = get.bind(tt)
